@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.anyun.api.controller.grpc.api.controller";
+option java_outer_classname = "apicontrollerdProto";
+
+package apigrpc;
+
+// The greeting service definition.
+service SendHelp {
+  // Sends a greeting
+  rpc SendHelp (Request) returns (Reply) {}
+}
+
+// The request message containing the user's name.
+message Request {
+  string id = 1;
+  string name = 2;
+  string version = 3; 
+  string dc = 4;
+  string hostcategory = 5;
+  string blockcategory = 6;
+  string dnsname = 7;
+  string round = 8;
+}
+
+// The response message containing the greetings
+message Reply {
+  string id = 1;
+  string data = 2;
+}
